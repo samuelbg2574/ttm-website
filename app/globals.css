@@ -871,8 +871,8 @@ li {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid var(--line-strong);
   border-radius: 0.75rem;
   background: rgba(255, 255, 255, 0.46);
@@ -2494,6 +2494,167 @@ li {
 @media (max-width: 640px) {
   h1 {
     font-size: clamp(2.9rem, 17vw, 4.7rem);
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-tight {
+    padding: 1.75rem 0 3rem;
+  }
+
+  /* Buttons: full-width stacking */
+  .hero-v2-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-v2-actions .button {
+    width: 100%;
+  }
+
+  /* Statement grid — force single column */
+  .statement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer — single column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Contact/Why — force single column */
+  .contact-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-media,
+  .why-media {
+    min-height: 22rem;
+    height: 22rem;
+  }
+
+  /* Featured grid — single column */
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials — shorter container on mobile */
+  .testi-grid {
+    max-height: 480px;
+  }
+
+  /* Case detail hero metric panel */
+  .cs-detail-hero-metric {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero v2 headline */
+  .hero-v2-headline {
+    font-size: clamp(3rem, 13vw, 4.8rem);
+  }
+
+  /* Tighten container side margins */
+  .container {
+    width: calc(100% - 1.5rem);
+  }
+
+  /* Hero image shorter on phones */
+  .hero-v2-media {
+    height: clamp(220px, 50vw, 360px);
+  }
+
+  .hero-v2-figure {
+    border-radius: 1.25rem;
+  }
+
+  /* Proof card — tighter */
+  .hero-v2-proof {
+    left: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .hero-v2-proof-stat {
+    font-size: 1.2rem;
+  }
+
+  /* Case study hero headline */
+  .cs-hero-headline {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  /* Testimonials hero */
+  .testi-hero-headline {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .testi-hero {
+    padding: 2rem 0 3rem;
+  }
+
+  /* Service blocks — less vertical padding */
+  .service-block {
+    padding: 3rem 0;
+  }
+
+  .service-block-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .service-block-image {
+    height: 18rem;
+    border-radius: 1.25rem;
+  }
+
+  /* Case tiles — shorter image */
+  .case-tile-img-wrap {
+    height: 18rem;
+  }
+
+  /* Case detail sections */
+  .cs-detail-body {
+    padding: 3rem 0;
+  }
+
+  .cs-detail-section {
+    padding: 2rem 0;
+  }
+
+  .cs-detail-image-wrap {
+    height: clamp(18rem, 50vw, 28rem);
+    border-radius: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cs-detail-headline {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  /* Nav hamburger bigger touch target */
+  .nav-hamburger {
+    width: 2.85rem;
+    height: 2.85rem;
+  }
+
+  /* Scroll to top — slightly smaller on mobile */
+  .scroll-top-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* Mobile nav — limit height for small phones in landscape */
+  .nav-mobile-open {
+    max-height: min(28rem, 70vh);
   }
 }
 

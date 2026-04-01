@@ -1,21 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => {
-      sectionRef.current?.setAttribute("data-loaded", "");
-    }, 80);
+    setLoaded(false);
+    const t = setTimeout(() => setLoaded(true), 80);
     return () => clearTimeout(t);
   }, []);
 
   return (
-    <section ref={sectionRef} className="hero-v2">
+    <section className="hero-v2" {...(loaded ? { "data-loaded": "" } : {})}>
       <div className="container hero-v2-grid">
 
         {/* ── Left: Copy ───────────────────────────────── */}

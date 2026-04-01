@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,17 +26,16 @@ const METRICS = [
 ];
 
 export function CaseStudiesHero() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => {
-      sectionRef.current?.setAttribute("data-loaded", "");
-    }, 80);
+    setLoaded(false);
+    const t = setTimeout(() => setLoaded(true), 80);
     return () => clearTimeout(t);
   }, []);
 
   return (
-    <section ref={sectionRef} className="cs-hero">
+    <section className="cs-hero" {...(loaded ? { "data-loaded": "" } : {})}>
       <div className="container cs-hero-grid">
 
         {/* ── Left: Copy ───────────────────────────────── */}
