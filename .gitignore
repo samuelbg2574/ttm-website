@@ -29,3 +29,6 @@ yarn-error.log*
 
 # claude local config
 .claude/
+
+# legacy snapshots
+snapshots/
