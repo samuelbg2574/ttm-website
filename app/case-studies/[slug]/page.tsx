@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { CASE_STUDIES, getCaseStudy } from "@/lib/case-studies-data";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -13,7 +13,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const study = getCaseStudy(params.slug);
+  const { slug } = await params;
+  const study = getCaseStudy(slug);
   if (!study) return {};
   return {
     title: study.tileTitle,
@@ -21,8 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CaseStudyDetailPage({ params }: Props) {
-  const study = getCaseStudy(params.slug);
+export default async function CaseStudyDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const study = getCaseStudy(slug);
   if (!study) notFound();
 
   return (
