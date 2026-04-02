@@ -26,6 +26,15 @@ const TEAM: TeamMember[] = [
     linkedinUrl: "#",
     emailUrl: "mailto:toptiermathematics@gmail.com",
   },
+  {
+    name: "Iliaz",
+    title: "Founder & Director",
+    bio: "Iliaz brings a rigorous academic background and a deep commitment to the kind of one-to-one education that changes outcomes. His focus is on the operational and relational side of TTM — ensuring that every tutor placement is supported, every family is heard, and every programme is run with the same precision applied in the classroom.",
+    imageUrl:
+      "https://images.pexels.com/photos/6325967/pexels-photo-6325967.jpeg?auto=compress&cs=tinysrgb&w=800",
+    linkedinUrl: "#",
+    emailUrl: "mailto:toptiermathematics@gmail.com",
+  },
 ];
 
 export interface FounderProfileCardProps {

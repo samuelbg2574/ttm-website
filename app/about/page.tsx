@@ -40,8 +40,8 @@ export default function AboutPage() {
       <section className="section about-founder-section" data-reveal>
         <div className="container">
           <div className="about-founder-header">
-            <p className="eyebrow">Meet the Founder</p>
-            <h2>Built by someone who has tutored.</h2>
+            <p className="eyebrow">Meet the Founders</p>
+            <h2>Built by people who have tutored.</h2>
           </div>
           <FounderProfileCard />
         </div>
