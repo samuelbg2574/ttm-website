@@ -911,6 +911,9 @@ li {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .nav-mobile-open {
@@ -2004,6 +2007,107 @@ li {
 
   .cs-detail-metric-item:last-child {
     border-bottom: none;
+  }
+}
+
+/* ─── About Page ─────────────────────────────────────────────────────────── */
+
+/* Hero portrait (right column) */
+.about-hero-portrait {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  min-height: 44rem;
+  margin: 0;
+}
+
+/* Founder section */
+.about-founder-section {
+  background: var(--canvas-deep);
+}
+
+.about-founder-header {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.about-founder-header h2 {
+  margin: 0;
+}
+
+/* Our approach / values */
+.about-values-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.about-values-copy {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: 7rem;
+}
+
+.about-values-copy p:last-of-type {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.about-values-list {
+  margin: 0;
+}
+
+/* CTA section */
+.about-cta {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 640px;
+}
+
+.about-cta h2 {
+  color: var(--surface);
+  margin: 0;
+}
+
+.about-cta p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Ghost light button variant */
+.button-ghost-light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+}
+
+.button-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  .about-hero-portrait {
+    min-height: 28rem;
+    order: -1;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-copy {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero-portrait {
+    min-height: 22rem;
   }
 }
 
